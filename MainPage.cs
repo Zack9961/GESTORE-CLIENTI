@@ -32,7 +32,7 @@ namespace PrototipoProgetto
             //Client client = new Client(null,"ciao","ciao","ciao","ciao");
             Form NewClientPageForm = new NewClientPage(clientItem,clientSubItem);
             NewClientPageForm.ShowDialog();
-            if(NewClientPage.bttnCancelClick!=null)
+            if(clientItem!=null)
             {
                 lstVwMain.Items.Add(clientItem);
                 clientItem.SubItems.Add(clientSubItem);
