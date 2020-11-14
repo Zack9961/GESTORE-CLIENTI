@@ -17,6 +17,7 @@ namespace Prova2
         {
             InitializeComponent();
             this.client = c;
+            this.dtpWeightData.MinDate = c.LastDate(c.DateList);
         }
 
         private void bttnCancel_Click(object sender, EventArgs e)

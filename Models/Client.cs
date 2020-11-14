@@ -106,10 +106,10 @@ namespace Prova2
             return category;
         }
 
-        /*public void AddWeightDate(DateTime date)
+        public DateTime LastDate(List<DateTime> list)
         {
-            this.DateList.Add(date);
-        }*/
+            return list[(list.Count - 1)];
+        }
 
     }
 }
