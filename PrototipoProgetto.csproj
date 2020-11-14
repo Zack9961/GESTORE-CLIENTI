@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,7 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
+    <Compile Include="AddWeightPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddWeightPage.Designer.cs">
+      <DependentUpon>AddWeightPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Client.cs" />
     <Compile Include="EditClientPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +80,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddWeightPage.resx">
+      <DependentUpon>AddWeightPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditClientPage.resx">
       <DependentUpon>EditClientPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Estensioni\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

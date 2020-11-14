@@ -13,64 +13,71 @@ namespace Prova2
 {
     public partial class NewClientPage : Form
     {
-        private String name;
-        private String surname;
+        
+        public List<Client> clients { get; set; }
+        //public List<DateTime> dates { get; set; }
         private String sex;
-        private String weight;
-        private String height;
-        private Client client;
-        private ListViewItem clientItem;
-        private ListViewItem.ListViewSubItem clientSubItem;
-
-        public NewClientPage(ListViewItem c,ListViewItem.ListViewSubItem s)
+        public NewClientPage(List<Client> clients)
         {
             InitializeComponent();
-            this.clientItem = c;
-            this.clientSubItem = s;
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
+            this.clients = clients;
+            this.sex = null;
             
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
+ 
         }
 
         private void bttnOk_Click(object sender, EventArgs e)
         {
-            this.clientItem.Text = txtName.Text;
-            this.clientSubItem.Text = txtSurname.Text;
-            if(rdBttnSexFemale.Checked)
+            
+            if (CheckFields())
             {
-                sex = "Female";
+                CheckRadioBttn();
+                AddClient();
+                Close();
             }
             else
             {
-                sex = "Male";
+                MessageBox.Show("Riempi tutti i campi!");
             }
-            //this.clientSubItem.Text = txtWeight.Text;
-            height = txtHeight.Text;
-            
-            Close();
-            //MessageBox.Show(this.client.name);
-
-            
-
+           
         }
 
         private void bttnCancel_Click(object sender, EventArgs e)
         {
-            this.clientItem = null;
             Close();
         }
+        
 
-        public ListViewItem getClient()
+        private void AddClient()
         {
-            return this.clientItem;
+            var client = new Client(txtName.Text, txtSurname.Text, float.Parse(txtWeight.Text),
+                float.Parse(txtHeight.Text), sex, dtpBirthday.Value);
+                clients.Add(client);
+            client.DateList.Add(DateTime.Now);
         }
+
+        private bool CheckFields()
+        {
+            return !string.IsNullOrEmpty(txtName.Text)
+                && !string.IsNullOrEmpty(txtSurname.Text)
+                && !string.IsNullOrEmpty(txtWeight.Text)
+                && !string.IsNullOrEmpty(txtHeight.Text)
+                && (rBttnFemale.Checked 
+                ||  rBttnMale.Checked);       
+        }
+
+        private void CheckRadioBttn()
+        {
+            if (rBttnFemale.Checked)
+            {
+                sex = "Femmina";
+            }
+            else
+            {
+                sex = "Maschio";
+            }
+
+        }
+
     }
 }

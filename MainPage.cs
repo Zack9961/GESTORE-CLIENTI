@@ -13,72 +13,77 @@ namespace PrototipoProgetto
 {
     public partial class MainPage : Form
     {
-        //private Client client;
+        public List<Client> clients;
+        public ListViewItem clientItem;
+        private int index;
 
         public MainPage()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            this.clients = new List<Client>();
+            this.index = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ListViewItem clientItem = new ListViewItem();
-            ListViewItem.ListViewSubItem clientSubItem = new ListViewItem.ListViewSubItem();
-            //Client client = new Client(null,"ciao","ciao","ciao","ciao");
-            Form NewClientPageForm = new NewClientPage(clientItem,clientSubItem);
+
+            NewClientPage NewClientPageForm = new NewClientPage(clients);
             NewClientPageForm.ShowDialog();
-            if(clientItem!=null)
+            //se il numero di clienti nella lista è uagule all'indice allora vuol dire
+            //che è stato annullato l'inserimento, 0 clienti nella lista e index == 0;
+            if(NewClientPageForm.clients.Count!=index)
             {
+                clients = NewClientPageForm.clients;
+                clientItem = new ListViewItem();
+                clientItem = clients[index].ToListViewItem(clients[index]);
                 lstVwMain.Items.Add(clientItem);
-                clientItem.SubItems.Add(clientSubItem);
-            }
-            else
-            {
-                lstVwMain.Items.Remove(clientItem);
+                index++;
             }
             
 
-
-
-
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form ClientPageForm = new ClientPage();
-            ClientPageForm.ShowDialog();
+            
+            if (lstVwMain.SelectedIndices.Count == 0)
+            {
+                MessageBox.Show("Seleziona un cliente");
+            }
+            else
+            {
+                ClientPage ClientPageForm = new ClientPage(clients[lstVwMain.SelectedIndices[0]]);
+                ClientPageForm.ShowDialog();
+
+
+            }
         }
 
         private void lblClientPage_Click(object sender, EventArgs e)
         {
 
+
         }
 
         private void bttnEditClient_Click(object sender, EventArgs e)
         {
-            if(lstVwMain.SelectedIndices.Count == 0)
+            if (lstVwMain.SelectedIndices.Count == 0)
             {
                 MessageBox.Show("Seleziona un cliente");
-            }else
+            }
+            else
             {
-
-                lstVwMain.SelectedIndices.Clear();
-                ListViewItem newClientItem = new ListViewItem();
-                ListViewItem.ListViewSubItem newClientSubItem = new ListViewItem.ListViewSubItem();
-                Form EditClientPageForm = new EditClientPage(newClientItem, newClientSubItem);
+                int editIndex;
+                EditClientPage EditClientPageForm = new EditClientPage(clients[lstVwMain.SelectedIndices[0]]);
                 EditClientPageForm.ShowDialog();
+                editIndex = lstVwMain.SelectedItems[0].Index;
+                this.clients.RemoveAt(editIndex);
+                lstVwMain.Items.RemoveAt(editIndex);
+                this.clients.Insert(editIndex, EditClientPageForm.editedClient);
+                lstVwMain.Items.Insert(editIndex, EditClientPageForm.editedClient.ToListViewItem(EditClientPageForm.editedClient));
                 
-
+                
             }
             
         }
@@ -86,6 +91,44 @@ namespace PrototipoProgetto
         private void bttnDelete_Click(object sender, EventArgs e)
         {
 
+            if (lstVwMain.SelectedIndices.Count == 0)
+            {
+                MessageBox.Show("Seleziona un cliente");
+            }
+            else
+            {
+                this.clients.Remove(clients[lstVwMain.SelectedIndices[0]]);
+                lstVwMain.Items.Remove(this.lstVwMain.SelectedItems[0]);
+                index--;
+            }
         }
+
+        private void bttnAddWeight_Click(object sender, EventArgs e)
+        {
+            if(lstVwMain.SelectedIndices.Count == 0)
+            {
+                MessageBox.Show("Seleziona un cliente");
+            }else
+            {
+                int editIndex;
+                AddWeightPage AddWeightPageForm = new AddWeightPage(clients[lstVwMain.SelectedIndices[0]]);
+                AddWeightPageForm.ShowDialog();
+                editIndex = lstVwMain.SelectedItems[0].Index;
+                this.clients.RemoveAt(editIndex);
+                lstVwMain.Items.RemoveAt(editIndex);
+                this.clients.Insert(editIndex, AddWeightPageForm.client);
+                lstVwMain.Items.Insert(editIndex, AddWeightPageForm.client.ToListViewItem(AddWeightPageForm.client));
+
+            }
+        }
+
+        /*private void updateClient(int index, Client client)
+        {
+            this.clients.RemoveAt(index);
+            lstVwMain.Items.RemoveAt(index);
+            this.clients.Insert(index, client);
+            lstVwMain.Items.Insert(index, client.ToListViewItem(client));
+        }*/
+
     }
 }

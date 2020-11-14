@@ -30,13 +30,13 @@
         {
             this.lblNewClient = new System.Windows.Forms.Label();
             this.bttnNewClient = new System.Windows.Forms.Button();
-            this.lblClientList = new System.Windows.Forms.Label();
             this.lstVwMain = new System.Windows.Forms.ListView();
             this.cHName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cHSurname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cHWeight = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cHHeight = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cHSex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cHAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblEditClient = new System.Windows.Forms.Label();
             this.lblDelete = new System.Windows.Forms.Label();
             this.lblClientPage = new System.Windows.Forms.Label();
@@ -45,6 +45,12 @@
             this.bttnEditClient = new System.Windows.Forms.Button();
             this.bttnAddWeight = new System.Windows.Forms.Button();
             this.lblAddWeight = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNewClient
@@ -56,7 +62,6 @@
             this.lblNewClient.Size = new System.Drawing.Size(106, 25);
             this.lblNewClient.TabIndex = 0;
             this.lblNewClient.Text = "New Client";
-            this.lblNewClient.Click += new System.EventHandler(this.label1_Click);
             // 
             // bttnNewClient
             // 
@@ -69,16 +74,6 @@
             this.bttnNewClient.UseVisualStyleBackColor = true;
             this.bttnNewClient.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lblClientList
-            // 
-            this.lblClientList.AutoSize = true;
-            this.lblClientList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientList.Location = new System.Drawing.Point(38, 19);
-            this.lblClientList.Name = "lblClientList";
-            this.lblClientList.Size = new System.Drawing.Size(97, 25);
-            this.lblClientList.TabIndex = 2;
-            this.lblClientList.Text = "Client List";
-            // 
             // lstVwMain
             // 
             this.lstVwMain.AccessibleDescription = "";
@@ -88,43 +83,49 @@
             this.cHSurname,
             this.cHWeight,
             this.cHHeight,
-            this.cHSex});
+            this.cHSex,
+            this.cHAge});
             this.lstVwMain.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lstVwMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstVwMain.FullRowSelect = true;
             this.lstVwMain.GridLines = true;
             this.lstVwMain.HideSelection = false;
-            this.lstVwMain.Location = new System.Drawing.Point(43, 47);
+            this.lstVwMain.Location = new System.Drawing.Point(6, 21);
             this.lstVwMain.Name = "lstVwMain";
-            this.lstVwMain.Size = new System.Drawing.Size(704, 252);
+            this.lstVwMain.Size = new System.Drawing.Size(377, 292);
             this.lstVwMain.TabIndex = 4;
             this.lstVwMain.UseCompatibleStateImageBehavior = false;
             this.lstVwMain.View = System.Windows.Forms.View.Details;
-            this.lstVwMain.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // cHName
             // 
             this.cHName.Text = "Name";
-            this.cHName.Width = 103;
+            this.cHName.Width = 84;
             // 
             // cHSurname
             // 
             this.cHSurname.Text = "Surname";
-            this.cHSurname.Width = 114;
+            this.cHSurname.Width = 83;
             // 
             // cHWeight
             // 
-            this.cHWeight.Text = "Weight";
-            this.cHWeight.Width = 87;
+            this.cHWeight.Text = "Weight (Kg)";
+            this.cHWeight.Width = 80;
             // 
             // cHHeight
             // 
-            this.cHHeight.Text = "Height";
-            this.cHHeight.Width = 72;
+            this.cHHeight.Text = "Height (M)";
+            this.cHHeight.Width = 77;
             // 
             // cHSex
             // 
             this.cHSex.Text = "Sex";
-            this.cHSex.Width = 69;
+            this.cHSex.Width = 49;
+            // 
+            // cHAge
+            // 
+            this.cHAge.Text = "Age";
+            this.cHAge.Width = 51;
             // 
             // lblEditClient
             // 
@@ -150,11 +151,11 @@
             // 
             this.lblClientPage.AutoSize = true;
             this.lblClientPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientPage.Location = new System.Drawing.Point(14, 348);
+            this.lblClientPage.Location = new System.Drawing.Point(22, 348);
             this.lblClientPage.Name = "lblClientPage";
-            this.lblClientPage.Size = new System.Drawing.Size(167, 25);
+            this.lblClientPage.Size = new System.Drawing.Size(113, 25);
             this.lblClientPage.TabIndex = 8;
-            this.lblClientPage.Text = "Open Client Page";
+            this.lblClientPage.Text = "Client Page";
             this.lblClientPage.Click += new System.EventHandler(this.lblClientPage_Click);
             // 
             // bttnClientPage
@@ -199,6 +200,7 @@
             this.bttnAddWeight.TabIndex = 12;
             this.bttnAddWeight.Text = "⚖️";
             this.bttnAddWeight.UseVisualStyleBackColor = true;
+            this.bttnAddWeight.Click += new System.EventHandler(this.bttnAddWeight_Click);
             // 
             // lblAddWeight
             // 
@@ -210,11 +212,43 @@
             this.lblAddWeight.TabIndex = 13;
             this.lblAddWeight.Text = "Add Weight";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lstVwMain);
+            this.groupBox2.Location = new System.Drawing.Point(19, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(389, 322);
+            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Client List";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(414, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(379, 313);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Weight List";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(367, 286);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblAddWeight);
             this.Controls.Add(this.bttnAddWeight);
             this.Controls.Add(this.bttnEditClient);
@@ -223,12 +257,13 @@
             this.Controls.Add(this.lblClientPage);
             this.Controls.Add(this.lblDelete);
             this.Controls.Add(this.lblEditClient);
-            this.Controls.Add(this.lstVwMain);
-            this.Controls.Add(this.lblClientList);
             this.Controls.Add(this.bttnNewClient);
             this.Controls.Add(this.lblNewClient);
             this.Name = "MainPage";
             this.Text = "Main";
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,7 +273,6 @@
 
         private System.Windows.Forms.Label lblNewClient;
         private System.Windows.Forms.Button bttnNewClient;
-        private System.Windows.Forms.Label lblClientList;
         private System.Windows.Forms.ListView lstVwMain;
         private System.Windows.Forms.Label lblEditClient;
         private System.Windows.Forms.Label lblDelete;
@@ -253,6 +287,10 @@
         private System.Windows.Forms.ColumnHeader cHWeight;
         private System.Windows.Forms.ColumnHeader cHHeight;
         private System.Windows.Forms.ColumnHeader cHSex;
+        private System.Windows.Forms.ColumnHeader cHAge;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
