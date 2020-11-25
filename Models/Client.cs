@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Prova2
+namespace GESTORE_CLIENTI
 {
     public class Client
     {

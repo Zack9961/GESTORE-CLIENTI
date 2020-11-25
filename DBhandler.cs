@@ -7,7 +7,7 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using System.Text.Json;
 
-namespace Prova2
+namespace GESTORE_CLIENTI
 {
     class DBhandler
     {

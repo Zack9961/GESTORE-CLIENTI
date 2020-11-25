@@ -1,4 +1,4 @@
-﻿using Prova2;
+﻿using GESTORE_CLIENTI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -1,4 +1,4 @@
-﻿namespace Prova2
+﻿namespace GESTORE_CLIENTI
 {
     partial class ClientPage
     {
