@@ -13,11 +13,13 @@ namespace Prova2
     public partial class AddWeightPage : Form
     {
         public Client client { get; set; }
+        
         public AddWeightPage(Client c)
         {
             InitializeComponent();
             this.client = c;
             this.dtpWeightData.MinDate = c.LastDate(c.DateList);
+            
         }
 
         private void bttnCancel_Click(object sender, EventArgs e)
@@ -31,6 +33,10 @@ namespace Prova2
             client.WeightsList.Add(float.Parse(txtWeight.Text));
             client.DateList.Add(dtpWeightData.Value);
             Close();
+        }
+        internal void HandleInput(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == ',');
         }
 
     } 

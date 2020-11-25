@@ -60,6 +60,10 @@ namespace Prova2
             Close();
         }
 
-       
+        internal void HandleInput(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == ',');
+        }
+
     }
 }

@@ -128,6 +128,7 @@
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(80, 27);
             this.txtWeight.TabIndex = 8;
+            this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HandleInput);
             // 
             // lblBirthDate
             // 
@@ -168,6 +169,7 @@
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(84, 27);
             this.txtHeight.TabIndex = 10;
+            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HandleInput);
             // 
             // dtpBirthday
             // 

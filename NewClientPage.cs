@@ -15,15 +15,14 @@ namespace Prova2
     {
         
         public List<Client> clients { get; set; }
-        //public List<DateTime> dates { get; set; }
         private String sex;
+
         public NewClientPage(List<Client> clients)
         {
             InitializeComponent();
             this.clients = clients;
             this.sex = null;
-            
- 
+  
         }
 
         private void bttnOk_Click(object sender, EventArgs e)
@@ -78,6 +77,14 @@ namespace Prova2
             }
 
         }
+
+        internal void HandleInput(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == ',');
+        }
+
+
+
 
     }
 }

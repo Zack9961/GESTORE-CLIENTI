@@ -104,6 +104,7 @@
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(84, 27);
             this.txtHeight.TabIndex = 32;
+            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HandleInput); 
             // 
             // txtSurname
             // 
@@ -120,9 +121,9 @@
             this.lblWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWeight.Location = new System.Drawing.Point(238, 113);
             this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(69, 29);
+            this.lblWeight.Size = new System.Drawing.Size(150, 29);
             this.lblWeight.TabIndex = 25;
-            this.lblWeight.Text = "Peso";
+            this.lblWeight.Text = "Peso iniziale";
             this.lblWeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtWeight
@@ -133,6 +134,7 @@
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(80, 27);
             this.txtWeight.TabIndex = 31;
+            this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HandleInput);
             // 
             // lblSurname
             // 

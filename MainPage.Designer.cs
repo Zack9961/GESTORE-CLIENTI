@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblNewClient = new System.Windows.Forms.Label();
             this.bttnNewClient = new System.Windows.Forms.Button();
             this.lstVwMain = new System.Windows.Forms.ListView();
@@ -45,12 +48,12 @@
             this.bttnEditClient = new System.Windows.Forms.Button();
             this.bttnAddWeight = new System.Windows.Forms.Button();
             this.lblAddWeight = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.grpBoxClientList = new System.Windows.Forms.GroupBox();
+            this.grpBoxWeightChart = new System.Windows.Forms.GroupBox();
+            this.chrtWeight = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.grpBoxClientList.SuspendLayout();
+            this.grpBoxWeightChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chrtWeight)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNewClient
@@ -72,12 +75,13 @@
             this.bttnNewClient.TabIndex = 1;
             this.bttnNewClient.Text = "➕";
             this.bttnNewClient.UseVisualStyleBackColor = true;
-            this.bttnNewClient.Click += new System.EventHandler(this.button1_Click);
+            this.bttnNewClient.Click += new System.EventHandler(this.bttnNewClient_Click);
             // 
             // lstVwMain
             // 
             this.lstVwMain.AccessibleDescription = "";
             this.lstVwMain.AccessibleName = "";
+            this.lstVwMain.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.lstVwMain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cHName,
             this.cHSurname,
@@ -96,6 +100,7 @@
             this.lstVwMain.TabIndex = 4;
             this.lstVwMain.UseCompatibleStateImageBehavior = false;
             this.lstVwMain.View = System.Windows.Forms.View.Details;
+            this.lstVwMain.ItemActivate += new System.EventHandler(this.lstVwMain_ItemActivate);
             // 
             // cHName
             // 
@@ -109,12 +114,12 @@
             // 
             // cHWeight
             // 
-            this.cHWeight.Text = "Weight (Kg)";
+            this.cHWeight.Text = "Weight";
             this.cHWeight.Width = 80;
             // 
             // cHHeight
             // 
-            this.cHHeight.Text = "Height (M)";
+            this.cHHeight.Text = "Height";
             this.cHHeight.Width = 77;
             // 
             // cHSex
@@ -156,7 +161,6 @@
             this.lblClientPage.Size = new System.Drawing.Size(113, 25);
             this.lblClientPage.TabIndex = 8;
             this.lblClientPage.Text = "Client Page";
-            this.lblClientPage.Click += new System.EventHandler(this.lblClientPage_Click);
             // 
             // bttnClientPage
             // 
@@ -167,7 +171,7 @@
             this.bttnClientPage.TabIndex = 9;
             this.bttnClientPage.Text = "🙋🏽";
             this.bttnClientPage.UseVisualStyleBackColor = true;
-            this.bttnClientPage.Click += new System.EventHandler(this.button2_Click);
+            this.bttnClientPage.Click += new System.EventHandler(this.bttnClientPage_Click);
             // 
             // bttnDelete
             // 
@@ -212,43 +216,56 @@
             this.lblAddWeight.TabIndex = 13;
             this.lblAddWeight.Text = "Add Weight";
             // 
-            // groupBox2
+            // grpBoxClientList
             // 
-            this.groupBox2.Controls.Add(this.lstVwMain);
-            this.groupBox2.Location = new System.Drawing.Point(19, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(389, 322);
-            this.groupBox2.TabIndex = 23;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Client List";
+            this.grpBoxClientList.Controls.Add(this.lstVwMain);
+            this.grpBoxClientList.Location = new System.Drawing.Point(19, 12);
+            this.grpBoxClientList.Name = "grpBoxClientList";
+            this.grpBoxClientList.Size = new System.Drawing.Size(389, 322);
+            this.grpBoxClientList.TabIndex = 23;
+            this.grpBoxClientList.TabStop = false;
+            this.grpBoxClientList.Text = "Client List";
             // 
-            // groupBox1
+            // grpBoxWeightChart
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(414, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(379, 313);
-            this.groupBox1.TabIndex = 24;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Weight List";
+            this.grpBoxWeightChart.Controls.Add(this.chrtWeight);
+            this.grpBoxWeightChart.Location = new System.Drawing.Point(414, 12);
+            this.grpBoxWeightChart.Name = "grpBoxWeightChart";
+            this.grpBoxWeightChart.Size = new System.Drawing.Size(379, 313);
+            this.grpBoxWeightChart.TabIndex = 24;
+            this.grpBoxWeightChart.TabStop = false;
+            this.grpBoxWeightChart.Text = "Weight Chart";
             // 
-            // dataGridView1
+            // chrtWeight
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(367, 286);
-            this.dataGridView1.TabIndex = 0;
+            this.chrtWeight.BackImageTransparentColor = System.Drawing.Color.White;
+            chartArea1.Name = "ChartArea1";
+            this.chrtWeight.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chrtWeight.Legends.Add(legend1);
+            this.chrtWeight.Location = new System.Drawing.Point(6, 22);
+            this.chrtWeight.Name = "chrtWeight";
+            series1.BorderColor = System.Drawing.Color.White;
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.IsXValueIndexed = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Kg";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chrtWeight.Series.Add(series1);
+            this.chrtWeight.Size = new System.Drawing.Size(367, 285);
+            this.chrtWeight.TabIndex = 0;
+            this.chrtWeight.Text = "chart1";
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grpBoxWeightChart);
+            this.Controls.Add(this.grpBoxClientList);
             this.Controls.Add(this.lblAddWeight);
             this.Controls.Add(this.bttnAddWeight);
             this.Controls.Add(this.bttnEditClient);
@@ -261,9 +278,9 @@
             this.Controls.Add(this.lblNewClient);
             this.Name = "MainPage";
             this.Text = "Main";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.grpBoxClientList.ResumeLayout(false);
+            this.grpBoxWeightChart.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chrtWeight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,9 +305,9 @@
         private System.Windows.Forms.ColumnHeader cHHeight;
         private System.Windows.Forms.ColumnHeader cHSex;
         private System.Windows.Forms.ColumnHeader cHAge;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox grpBoxClientList;
+        private System.Windows.Forms.GroupBox grpBoxWeightChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chrtWeight;
     }
 }
 

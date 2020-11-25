@@ -44,6 +44,7 @@
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(141, 30);
             this.txtWeight.TabIndex = 1;
+            this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HandleInput);
             // 
             // lblAddWeight
             // 

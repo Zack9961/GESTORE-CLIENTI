@@ -36,14 +36,12 @@ namespace Prova2
             
         }
 
-        public String GetName()
-        {
-            return this.Name;
-        }
+        
 
         public ListViewItem ToListViewItem(Client client)
         {
-            string[] row = { client.Name, client.Surname, LastWeight(WeightsList).ToString(), client.Height.ToString(), client.Sex, client.Age.ToString() };
+
+            string[] row = { client.Name, client.Surname, LastWeight(WeightsList).ToString()+" kg", client.Height.ToString()+" m", client.Sex, client.Age.ToString()+" anni" };
             return new ListViewItem(row);
         }
 
@@ -109,6 +107,23 @@ namespace Prova2
         public DateTime LastDate(List<DateTime> list)
         {
             return list[(list.Count - 1)];
+        }
+
+        public float FindMinimumWeight()
+        {
+            float attuale;
+            float minimum = 0;
+            float minL = 999999;
+            for (int i = 0; i < this.WeightsList.Count; i++)
+            {
+                attuale = this.WeightsList[i];
+                if (attuale < minL)
+                {
+                    minL = attuale;
+                    minimum = attuale;
+                }
+            }
+            return minimum;
         }
 
     }

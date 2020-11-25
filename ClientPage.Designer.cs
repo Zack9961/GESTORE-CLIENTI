@@ -40,14 +40,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dtpFinalWeight = new System.Windows.Forms.DateTimePicker();
-            this.dtpStartWeight = new System.Windows.Forms.DateTimePicker();
+            this.dtpLastWeight = new System.Windows.Forms.DateTimePicker();
+            this.dtpFirstWeight = new System.Windows.Forms.DateTimePicker();
             this.txtIdealWeight = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtFinalWeight = new System.Windows.Forms.TextBox();
+            this.txtLastWeight = new System.Windows.Forms.TextBox();
             this.txtWeightChanged = new System.Windows.Forms.TextBox();
             this.txtWeightChangedWeekly = new System.Windows.Forms.TextBox();
-            this.txtStartWeight = new System.Windows.Forms.TextBox();
+            this.txtFirstWeight = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -143,14 +143,14 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dtpFinalWeight);
-            this.groupBox1.Controls.Add(this.dtpStartWeight);
+            this.groupBox1.Controls.Add(this.dtpLastWeight);
+            this.groupBox1.Controls.Add(this.dtpFirstWeight);
             this.groupBox1.Controls.Add(this.txtIdealWeight);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtFinalWeight);
+            this.groupBox1.Controls.Add(this.txtLastWeight);
             this.groupBox1.Controls.Add(this.txtWeightChanged);
             this.groupBox1.Controls.Add(this.txtWeightChangedWeekly);
-            this.groupBox1.Controls.Add(this.txtStartWeight);
+            this.groupBox1.Controls.Add(this.txtFirstWeight);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -167,7 +167,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(312, 249);
+            this.label13.Location = new System.Drawing.Point(311, 253);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(29, 20);
             this.label13.TabIndex = 39;
@@ -177,7 +177,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(312, 213);
+            this.label12.Location = new System.Drawing.Point(311, 219);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 20);
             this.label12.TabIndex = 38;
@@ -213,32 +213,32 @@
             this.label9.TabIndex = 35;
             this.label9.Text = "Kg";
             // 
-            // dtpFinalWeight
+            // dtpLastWeight
             // 
-            this.dtpFinalWeight.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dtpFinalWeight.Enabled = false;
-            this.dtpFinalWeight.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpFinalWeight.Location = new System.Drawing.Point(121, 92);
-            this.dtpFinalWeight.Name = "dtpFinalWeight";
-            this.dtpFinalWeight.Size = new System.Drawing.Size(219, 22);
-            this.dtpFinalWeight.TabIndex = 34;
+            this.dtpLastWeight.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtpLastWeight.Enabled = false;
+            this.dtpLastWeight.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtpLastWeight.Location = new System.Drawing.Point(121, 92);
+            this.dtpLastWeight.Name = "dtpLastWeight";
+            this.dtpLastWeight.Size = new System.Drawing.Size(219, 22);
+            this.dtpLastWeight.TabIndex = 34;
             // 
-            // dtpStartWeight
+            // dtpFirstWeight
             // 
-            this.dtpStartWeight.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dtpStartWeight.Enabled = false;
-            this.dtpStartWeight.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpStartWeight.Location = new System.Drawing.Point(121, 28);
-            this.dtpStartWeight.Name = "dtpStartWeight";
-            this.dtpStartWeight.Size = new System.Drawing.Size(219, 22);
-            this.dtpStartWeight.TabIndex = 33;
-            this.dtpStartWeight.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
+            this.dtpFirstWeight.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtpFirstWeight.Enabled = false;
+            this.dtpFirstWeight.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtpFirstWeight.Location = new System.Drawing.Point(121, 28);
+            this.dtpFirstWeight.Name = "dtpFirstWeight";
+            this.dtpFirstWeight.Size = new System.Drawing.Size(219, 22);
+            this.dtpFirstWeight.TabIndex = 33;
+            this.dtpFirstWeight.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
             // 
             // txtIdealWeight
             // 
             this.txtIdealWeight.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdealWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdealWeight.Location = new System.Drawing.Point(240, 249);
+            this.txtIdealWeight.Location = new System.Drawing.Point(240, 250);
             this.txtIdealWeight.Name = "txtIdealWeight";
             this.txtIdealWeight.ReadOnly = true;
             this.txtIdealWeight.Size = new System.Drawing.Size(66, 27);
@@ -254,15 +254,15 @@
             this.label5.TabIndex = 31;
             this.label5.Text = "Peso ideale";
             // 
-            // txtFinalWeight
+            // txtLastWeight
             // 
-            this.txtFinalWeight.BackColor = System.Drawing.SystemColors.Control;
-            this.txtFinalWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFinalWeight.Location = new System.Drawing.Point(240, 120);
-            this.txtFinalWeight.Name = "txtFinalWeight";
-            this.txtFinalWeight.ReadOnly = true;
-            this.txtFinalWeight.Size = new System.Drawing.Size(66, 27);
-            this.txtFinalWeight.TabIndex = 30;
+            this.txtLastWeight.BackColor = System.Drawing.SystemColors.Control;
+            this.txtLastWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastWeight.Location = new System.Drawing.Point(240, 120);
+            this.txtLastWeight.Name = "txtLastWeight";
+            this.txtLastWeight.ReadOnly = true;
+            this.txtLastWeight.Size = new System.Drawing.Size(66, 27);
+            this.txtLastWeight.TabIndex = 30;
             // 
             // txtWeightChanged
             // 
@@ -278,21 +278,21 @@
             // 
             this.txtWeightChangedWeekly.BackColor = System.Drawing.SystemColors.Control;
             this.txtWeightChangedWeekly.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWeightChangedWeekly.Location = new System.Drawing.Point(240, 213);
+            this.txtWeightChangedWeekly.Location = new System.Drawing.Point(240, 216);
             this.txtWeightChangedWeekly.Name = "txtWeightChangedWeekly";
             this.txtWeightChangedWeekly.ReadOnly = true;
             this.txtWeightChangedWeekly.Size = new System.Drawing.Size(66, 27);
             this.txtWeightChangedWeekly.TabIndex = 28;
             // 
-            // txtStartWeight
+            // txtFirstWeight
             // 
-            this.txtStartWeight.BackColor = System.Drawing.SystemColors.Control;
-            this.txtStartWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStartWeight.Location = new System.Drawing.Point(240, 56);
-            this.txtStartWeight.Name = "txtStartWeight";
-            this.txtStartWeight.ReadOnly = true;
-            this.txtStartWeight.Size = new System.Drawing.Size(66, 27);
-            this.txtStartWeight.TabIndex = 26;
+            this.txtFirstWeight.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFirstWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstWeight.Location = new System.Drawing.Point(240, 56);
+            this.txtFirstWeight.Name = "txtFirstWeight";
+            this.txtFirstWeight.ReadOnly = true;
+            this.txtFirstWeight.Size = new System.Drawing.Size(66, 27);
+            this.txtFirstWeight.TabIndex = 26;
             // 
             // label6
             // 
@@ -347,10 +347,10 @@
             // 
             this.txtBMI.BackColor = System.Drawing.SystemColors.Control;
             this.txtBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBMI.Location = new System.Drawing.Point(176, 205);
+            this.txtBMI.Location = new System.Drawing.Point(154, 205);
             this.txtBMI.Name = "txtBMI";
             this.txtBMI.ReadOnly = true;
-            this.txtBMI.Size = new System.Drawing.Size(100, 27);
+            this.txtBMI.Size = new System.Drawing.Size(151, 27);
             this.txtBMI.TabIndex = 34;
             // 
             // label7
@@ -393,7 +393,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(282, 171);
+            this.label16.Location = new System.Drawing.Point(311, 173);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(42, 20);
             this.label16.TabIndex = 41;
@@ -403,7 +403,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(282, 100);
+            this.label15.Location = new System.Drawing.Point(311, 100);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(47, 20);
             this.label15.TabIndex = 40;
@@ -413,60 +413,60 @@
             // 
             this.txtAge.BackColor = System.Drawing.SystemColors.Control;
             this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAge.Location = new System.Drawing.Point(176, 169);
+            this.txtAge.Location = new System.Drawing.Point(154, 169);
             this.txtAge.Name = "txtAge";
             this.txtAge.ReadOnly = true;
-            this.txtAge.Size = new System.Drawing.Size(100, 27);
+            this.txtAge.Size = new System.Drawing.Size(151, 27);
             this.txtAge.TabIndex = 34;
             // 
             // txtCategory
             // 
             this.txtCategory.BackColor = System.Drawing.SystemColors.Control;
             this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategory.Location = new System.Drawing.Point(176, 241);
+            this.txtCategory.Location = new System.Drawing.Point(154, 241);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.ReadOnly = true;
-            this.txtCategory.Size = new System.Drawing.Size(177, 27);
+            this.txtCategory.Size = new System.Drawing.Size(199, 27);
             this.txtCategory.TabIndex = 29;
             // 
             // txtSex
             // 
             this.txtSex.BackColor = System.Drawing.SystemColors.Control;
             this.txtSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSex.Location = new System.Drawing.Point(176, 133);
+            this.txtSex.Location = new System.Drawing.Point(154, 133);
             this.txtSex.Name = "txtSex";
             this.txtSex.ReadOnly = true;
-            this.txtSex.Size = new System.Drawing.Size(100, 27);
+            this.txtSex.Size = new System.Drawing.Size(151, 27);
             this.txtSex.TabIndex = 31;
             // 
             // txtSurname
             // 
             this.txtSurname.BackColor = System.Drawing.SystemColors.Control;
             this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.Location = new System.Drawing.Point(176, 61);
+            this.txtSurname.Location = new System.Drawing.Point(154, 61);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.ReadOnly = true;
-            this.txtSurname.Size = new System.Drawing.Size(100, 27);
+            this.txtSurname.Size = new System.Drawing.Size(151, 27);
             this.txtSurname.TabIndex = 30;
             // 
             // txtHeight
             // 
             this.txtHeight.BackColor = System.Drawing.SystemColors.Control;
             this.txtHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHeight.Location = new System.Drawing.Point(176, 97);
+            this.txtHeight.Location = new System.Drawing.Point(154, 97);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.ReadOnly = true;
-            this.txtHeight.Size = new System.Drawing.Size(100, 27);
+            this.txtHeight.Size = new System.Drawing.Size(151, 27);
             this.txtHeight.TabIndex = 28;
             // 
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.SystemColors.Control;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(176, 25);
+            this.txtName.Location = new System.Drawing.Point(154, 25);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(100, 27);
+            this.txtName.Size = new System.Drawing.Size(151, 27);
             this.txtName.TabIndex = 26;
             // 
             // label14
@@ -505,10 +505,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBMI;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtFinalWeight;
+        private System.Windows.Forms.TextBox txtLastWeight;
         private System.Windows.Forms.TextBox txtWeightChanged;
         private System.Windows.Forms.TextBox txtWeightChangedWeekly;
-        private System.Windows.Forms.TextBox txtStartWeight;
+        private System.Windows.Forms.TextBox txtFirstWeight;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -524,8 +524,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtIdealWeight;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpStartWeight;
-        private System.Windows.Forms.DateTimePicker dtpFinalWeight;
+        private System.Windows.Forms.DateTimePicker dtpFirstWeight;
+        private System.Windows.Forms.DateTimePicker dtpLastWeight;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
