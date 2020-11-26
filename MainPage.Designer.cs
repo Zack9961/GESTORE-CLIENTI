@@ -1,4 +1,4 @@
-﻿namespace PrototipoProgetto
+﻿namespace CLIENTS_MANAGER
 {
     partial class MainPage
     {

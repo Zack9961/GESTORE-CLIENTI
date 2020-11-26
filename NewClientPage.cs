@@ -1,4 +1,4 @@
-﻿using PrototipoProgetto;
+﻿using CLIENTS_MANAGER;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GESTORE_CLIENTI
+namespace CLIENTS_MANAGER
 {
     public partial class NewClientPage : Form
     {

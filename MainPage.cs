@@ -1,4 +1,4 @@
-﻿using GESTORE_CLIENTI;
+﻿using CLIENTS_MANAGER;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PrototipoProgetto
+namespace CLIENTS_MANAGER
 {
     public partial class MainPage : Form
     {
@@ -22,9 +22,10 @@ namespace PrototipoProgetto
         {
             InitializeComponent();
             this.clients = new List<Client>();
-            dbHandler = new DBhandler();
+            dbHandler = DBhandler.GetInstance();
             LoadDB();
             this.index = this.clients.Count;
+            Application.ApplicationExit += new EventHandler(FinalSaveData);
         }
 
         private void bttnNewClient_Click(object sender, EventArgs e)
@@ -40,7 +41,6 @@ namespace PrototipoProgetto
                 clients = NewClientPageForm.clients;
                 clientItem = new ListViewItem();
                 clientItem = clients[index].ToListViewItem(clients[index]);
-                dbHandler.SaveData(clients);
                 lstVwMain.Items.Add(clientItem);
                 index++;
             }
@@ -82,7 +82,6 @@ namespace PrototipoProgetto
                 lstVwMain.Items.RemoveAt(editIndex);
                 clients.Insert(editIndex, EditClientPageForm.editedClient);
                 lstVwMain.Items.Insert(editIndex, EditClientPageForm.editedClient.ToListViewItem(EditClientPageForm.editedClient));
-                dbHandler.SaveData(clients);
 
             }
             
@@ -100,7 +99,6 @@ namespace PrototipoProgetto
                 clients.Remove(clients[lstVwMain.SelectedIndices[0]]);
                 lstVwMain.Items.Remove(lstVwMain.SelectedItems[0]);
                 chrtWeight.Series[0].Points.Clear();
-                dbHandler.SaveData(clients);
                 index--;
             }
         }
@@ -120,7 +118,6 @@ namespace PrototipoProgetto
                 lstVwMain.Items.RemoveAt(editIndex);
                 clients.Insert(editIndex, AddWeightPageForm.client);
                 lstVwMain.Items.Insert(editIndex, AddWeightPageForm.client.ToListViewItem(AddWeightPageForm.client));
-                dbHandler.SaveData(clients);
             }
 
         }
@@ -160,6 +157,11 @@ namespace PrototipoProgetto
                 clientItem = clients[i].ToListViewItem(clients[i]);
                 lstVwMain.Items.Add(clientItem);
             }
+        }
+
+        private void FinalSaveData(object sender, EventArgs e)
+        {
+            dbHandler.SaveData(clients);
         }
 
         

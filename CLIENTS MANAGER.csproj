@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9ACA87B5-A3E4-4515-B15C-6D947E6F03C2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Prova2</RootNamespace>
-    <AssemblyName>Prova2</AssemblyName>
+    <RootNamespace>CLIENTS_MANAGER</RootNamespace>
+    <AssemblyName>GESTORE CLIENTI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -135,6 +135,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />

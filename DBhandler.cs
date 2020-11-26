@@ -7,10 +7,23 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using System.Text.Json;
 
-namespace GESTORE_CLIENTI
+namespace CLIENTS_MANAGER
 {
     class DBhandler
     {
+
+        private static DBhandler instance;
+
+        public static DBhandler GetInstance()
+        {
+            if (instance == null)
+                instance = new DBhandler();
+            return instance;
+        }
+
+
+
+
 
         public List<Client> GetData()
         {
@@ -28,6 +41,7 @@ namespace GESTORE_CLIENTI
             File.WriteAllText("clientsArray", jsonString);
         }
         
+       
     }
 
 

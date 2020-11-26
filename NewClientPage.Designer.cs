@@ -1,4 +1,4 @@
-﻿namespace GESTORE_CLIENTI
+﻿namespace CLIENTS_MANAGER
 {
     partial class NewClientPage
     {
