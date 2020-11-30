@@ -46,7 +46,7 @@ namespace CLIENTS_MANAGER
             Close();
         }
         
-
+        //method that adds the client to the clients list and the "now data" in the datelist
         private void AddClient()
         {
             var client = new Client(txtName.Text, txtSurname.Text, float.Parse(txtWeight.Text),
@@ -54,7 +54,7 @@ namespace CLIENTS_MANAGER
                 clients.Add(client);
             client.DateList.Add(DateTime.Now);
         }
-
+        //method that checks fields
         private bool CheckFields()
         {
             return !string.IsNullOrEmpty(txtName.Text)
@@ -64,7 +64,7 @@ namespace CLIENTS_MANAGER
                 && (rBttnFemale.Checked 
                 ||  rBttnMale.Checked);       
         }
-
+        //method that checks the radio button
         private void CheckRadioBttn()
         {
             if (rBttnFemale.Checked)
@@ -77,7 +77,7 @@ namespace CLIENTS_MANAGER
             }
 
         }
-
+        //method that blocks wrong input
         internal void HandleInput(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == ',');

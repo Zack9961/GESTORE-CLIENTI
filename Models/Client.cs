@@ -19,7 +19,7 @@ namespace CLIENTS_MANAGER
         public List<DateTime> DateList { get; set; }
         public float BMI { get; set; }
         public String Category { get; set; }
-
+        //setting fields
         public Client(String name,String surname,float weight,float height,String sex, DateTime bData)
         {
             this.Name = name;
@@ -33,19 +33,8 @@ namespace CLIENTS_MANAGER
             this.Age = AgeCalculator(bData);
             this.BMI = BMICalculator();
             this.Category = CategoryCalculator();
-            
         }
-
-        
-
-        public ListViewItem ToListViewItem(Client client)
-        {
-
-            string[] row = { client.Name, client.Surname, LastWeight(WeightsList).ToString()+" kg", client.Height.ToString()+" m", client.Sex, client.Age.ToString()+" anni" };
-            return new ListViewItem(row);
-        }
-
-
+        //method that calculates the age of the client
         public int AgeCalculator(DateTime bData)
         {
             DateTime from = bData;
@@ -55,19 +44,19 @@ namespace CLIENTS_MANAGER
             int age = (int) (days / 365.242199);
             return age;
         }
-
+        //method that calculates the BMI of the client
         public float BMICalculator()
         {
             double bmi = LastWeight(WeightsList) / (Height * Height);
             bmi = Math.Round(bmi, 2);
             return (float)bmi;
         }
-
+        //method that returns the last weight of the weightslist
         public float LastWeight(List<float> list)
         {
             return list[(list.Count - 1)];
         }
-
+        //method that calculates the category of the client based on BMI
         public String CategoryCalculator()
         {
             float currentBMI = BMICalculator();
@@ -103,12 +92,12 @@ namespace CLIENTS_MANAGER
 
             return category;
         }
-
+        //method that returns the last date of datelist
         public DateTime LastDate(List<DateTime> list)
         {
             return list[(list.Count - 1)];
         }
-
+        //method that search and returns the minimun weight of the weightslist
         public float FindMinimumWeight()
         {
             float attuale;

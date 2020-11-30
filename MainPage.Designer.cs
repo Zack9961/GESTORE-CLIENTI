@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblNewClient = new System.Windows.Forms.Label();
             this.bttnNewClient = new System.Windows.Forms.Button();
             this.lstVwMain = new System.Windows.Forms.ListView();
@@ -60,11 +60,11 @@
             // 
             this.lblNewClient.AutoSize = true;
             this.lblNewClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewClient.Location = new System.Drawing.Point(201, 348);
+            this.lblNewClient.Location = new System.Drawing.Point(185, 348);
             this.lblNewClient.Name = "lblNewClient";
-            this.lblNewClient.Size = new System.Drawing.Size(106, 25);
+            this.lblNewClient.Size = new System.Drawing.Size(130, 25);
             this.lblNewClient.TabIndex = 0;
-            this.lblNewClient.Text = "New Client";
+            this.lblNewClient.Text = "Nuovo cliente";
             // 
             // bttnNewClient
             // 
@@ -104,63 +104,63 @@
             // 
             // cHName
             // 
-            this.cHName.Text = "Name";
-            this.cHName.Width = 84;
+            this.cHName.Text = "Nome";
+            this.cHName.Width = 65;
             // 
             // cHSurname
             // 
-            this.cHSurname.Text = "Surname";
+            this.cHSurname.Text = "Cognome";
             this.cHSurname.Width = 83;
             // 
             // cHWeight
             // 
-            this.cHWeight.Text = "Weight";
-            this.cHWeight.Width = 80;
+            this.cHWeight.Text = "Peso";
+            this.cHWeight.Width = 71;
             // 
             // cHHeight
             // 
-            this.cHHeight.Text = "Height";
-            this.cHHeight.Width = 77;
+            this.cHHeight.Text = "Altezza";
+            this.cHHeight.Width = 62;
             // 
             // cHSex
             // 
-            this.cHSex.Text = "Sex";
-            this.cHSex.Width = 49;
+            this.cHSex.Text = "Sesso";
+            this.cHSex.Width = 58;
             // 
             // cHAge
             // 
-            this.cHAge.Text = "Age";
+            this.cHAge.Text = "Età";
             this.cHAge.Width = 51;
             // 
             // lblEditClient
             // 
             this.lblEditClient.AutoSize = true;
             this.lblEditClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditClient.Location = new System.Drawing.Point(514, 348);
+            this.lblEditClient.Location = new System.Drawing.Point(492, 348);
             this.lblEditClient.Name = "lblEditClient";
-            this.lblEditClient.Size = new System.Drawing.Size(100, 25);
+            this.lblEditClient.Size = new System.Drawing.Size(146, 25);
             this.lblEditClient.TabIndex = 6;
-            this.lblEditClient.Text = "Edit Client";
+            this.lblEditClient.Text = "Modifica cliente";
             // 
             // lblDelete
             // 
             this.lblDelete.AutoSize = true;
             this.lblDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDelete.Location = new System.Drawing.Point(679, 348);
+            this.lblDelete.Location = new System.Drawing.Point(678, 348);
             this.lblDelete.Name = "lblDelete";
-            this.lblDelete.Size = new System.Drawing.Size(68, 25);
+            this.lblDelete.Size = new System.Drawing.Size(75, 25);
             this.lblDelete.TabIndex = 7;
-            this.lblDelete.Text = "Delete";
+            this.lblDelete.Text = "Elimina";
             // 
             // lblClientPage
             // 
             this.lblClientPage.AutoSize = true;
             this.lblClientPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientPage.Location = new System.Drawing.Point(22, 348);
+            this.lblClientPage.Location = new System.Drawing.Point(14, 348);
             this.lblClientPage.Name = "lblClientPage";
-            this.lblClientPage.Size = new System.Drawing.Size(113, 25);
+            this.lblClientPage.Size = new System.Drawing.Size(165, 25);
             this.lblClientPage.TabIndex = 8;
-            this.lblClientPage.Text = "Client Page";
+            this.lblClientPage.Text = "Pagina del cliente";
             // 
             // bttnClientPage
             // 
@@ -210,11 +210,11 @@
             // 
             this.lblAddWeight.AutoSize = true;
             this.lblAddWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddWeight.Location = new System.Drawing.Point(352, 348);
+            this.lblAddWeight.Location = new System.Drawing.Point(338, 348);
             this.lblAddWeight.Name = "lblAddWeight";
-            this.lblAddWeight.Size = new System.Drawing.Size(115, 25);
+            this.lblAddWeight.Size = new System.Drawing.Size(137, 25);
             this.lblAddWeight.TabIndex = 13;
-            this.lblAddWeight.Text = "Add Weight";
+            this.lblAddWeight.Text = "Aggiungi peso";
             // 
             // grpBoxClientList
             // 
@@ -224,7 +224,7 @@
             this.grpBoxClientList.Size = new System.Drawing.Size(389, 322);
             this.grpBoxClientList.TabIndex = 23;
             this.grpBoxClientList.TabStop = false;
-            this.grpBoxClientList.Text = "Client List";
+            this.grpBoxClientList.Text = "Lista Clienti";
             // 
             // grpBoxWeightChart
             // 
@@ -234,27 +234,27 @@
             this.grpBoxWeightChart.Size = new System.Drawing.Size(379, 313);
             this.grpBoxWeightChart.TabIndex = 24;
             this.grpBoxWeightChart.TabStop = false;
-            this.grpBoxWeightChart.Text = "Weight Chart";
+            this.grpBoxWeightChart.Text = "Grafico del peso";
             // 
             // chrtWeight
             // 
             this.chrtWeight.BackImageTransparentColor = System.Drawing.Color.White;
-            chartArea1.Name = "ChartArea1";
-            this.chrtWeight.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chrtWeight.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chrtWeight.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chrtWeight.Legends.Add(legend2);
             this.chrtWeight.Location = new System.Drawing.Point(6, 22);
             this.chrtWeight.Name = "chrtWeight";
-            series1.BorderColor = System.Drawing.Color.White;
-            series1.BorderWidth = 3;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.IsXValueIndexed = true;
-            series1.Legend = "Legend1";
-            series1.Name = "Kg";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chrtWeight.Series.Add(series1);
+            series2.BorderColor = System.Drawing.Color.White;
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.IsXValueIndexed = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Kg";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chrtWeight.Series.Add(series2);
             this.chrtWeight.Size = new System.Drawing.Size(367, 285);
             this.chrtWeight.TabIndex = 0;
             this.chrtWeight.Text = "chart1";
@@ -277,7 +277,7 @@
             this.Controls.Add(this.bttnNewClient);
             this.Controls.Add(this.lblNewClient);
             this.Name = "MainPage";
-            this.Text = "Main";
+            this.Text = "GESTORE CLIENTI";
             this.grpBoxClientList.ResumeLayout(false);
             this.grpBoxWeightChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chrtWeight)).EndInit();

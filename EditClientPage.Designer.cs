@@ -104,7 +104,7 @@
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(84, 27);
             this.txtHeight.TabIndex = 32;
-            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HandleInput); 
+            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HandleInput);
             // 
             // txtSurname
             // 
@@ -202,6 +202,7 @@
             // 
             // bttnCancel
             // 
+            this.bttnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnCancel.Location = new System.Drawing.Point(645, 366);
             this.bttnCancel.Name = "bttnCancel";
             this.bttnCancel.Size = new System.Drawing.Size(130, 53);
@@ -212,6 +213,7 @@
             // 
             // bttnOk
             // 
+            this.bttnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnOk.Location = new System.Drawing.Point(494, 366);
             this.bttnOk.Name = "bttnOk";
             this.bttnOk.Size = new System.Drawing.Size(130, 53);

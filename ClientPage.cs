@@ -12,7 +12,9 @@ namespace CLIENTS_MANAGER
 {
     public partial class ClientPage : Form
     {
+        //field used for methods in this page
         private Client clientStats;
+        //A lot of stuff to put in the text boxes of the page
         public ClientPage(Client c)
         {
             InitializeComponent();
@@ -31,13 +33,12 @@ namespace CLIENTS_MANAGER
             this.txtIdealWeight.Text = IdealWeightCalculator().ToString();
             this.txtWeightChanged.Text = WeightChangedCalculator().ToString();
             this.txtWeightChangedWeekly.Text = WeightChangedWeeklyClaculator().ToString();
-           
-            
         }
-
+        //method that calculate the ideal weight of the client
         private float IdealWeightCalculator()
         {
             double idealWeight;
+            //using the Keys Formula for the ieal weight
             if(clientStats.Sex == "Maschio")
             {
                 idealWeight = (clientStats.Height) * (clientStats.Height) * 22.1;
@@ -46,10 +47,10 @@ namespace CLIENTS_MANAGER
             {
                 idealWeight = (clientStats.Height) * (clientStats.Height) * 20.6;
             }
-
+            //approximation to 1 number after the decimal point
             return (float)(Math.Round(idealWeight,1));
         }
-
+        //This method calculate how much weight the client has lost or gained 
         private float WeightChangedCalculator()
         {
             double lastWeight;
@@ -58,9 +59,11 @@ namespace CLIENTS_MANAGER
             lastWeight = clientStats.LastWeight(clientStats.WeightsList);
             firstWeight = clientStats.WeightsList[0];
             weightChanged = lastWeight - firstWeight;
+            //approximation to 1 number after the decimal point
             return (float)Math.Round(weightChanged, 1);
         }
 
+        //This method calculate the weight variation on a weekly based average
         private float WeightChangedWeeklyClaculator()
         {
             DateTime lastDate = clientStats.LastDate(clientStats.DateList);
@@ -69,6 +72,7 @@ namespace CLIENTS_MANAGER
             TimeSpan timeSpan = lastDate - firstDate;
             double weeks = timeSpan.Days / 7.00;
             double weightChangedWeekly = weightChanged / weeks;
+            //approximation to 2 number after the decimal point
             return (float)(Math.Round(weightChangedWeekly, 2));
 
         }

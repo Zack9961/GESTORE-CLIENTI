@@ -84,7 +84,8 @@
     <Compile Include="AddWeightPage.Designer.cs">
       <DependentUpon>AddWeightPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBhandler.cs" />
+    <Compile Include="DBclass.cs" />
+    <Compile Include="Extensions\ClientExtensions.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="EditClientPage.cs">
       <SubType>Form</SubType>
@@ -152,8 +153,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Estensioni\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,22 +9,19 @@ using System.Text.Json;
 
 namespace CLIENTS_MANAGER
 {
-    class DBhandler
+    class DBclass
     {
-
-        private static DBhandler instance;
-
-        public static DBhandler GetInstance()
+        //field for singleton
+        private static DBclass instance;
+        //implementation of the singleton pattern
+        public static DBclass GetInstance()
         {
             if (instance == null)
-                instance = new DBhandler();
+                instance = new DBclass();
             return instance;
         }
 
-
-
-
-
+        //method that gets the data from json file in the bin folder
         public List<Client> GetData()
         {
             List<Client> clients = null;
@@ -33,7 +30,7 @@ namespace CLIENTS_MANAGER
             return clients;
       
         }
-
+        //method that save data writing a json file in the bin folder
         public void SaveData(List<Client> clients)
         {
             string jsonString;

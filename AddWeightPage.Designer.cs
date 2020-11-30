@@ -76,21 +76,21 @@
             // 
             // bttnOk
             // 
-            this.bttnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnOk.Location = new System.Drawing.Point(489, 366);
+            this.bttnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnOk.Location = new System.Drawing.Point(509, 385);
             this.bttnOk.Name = "bttnOk";
-            this.bttnOk.Size = new System.Drawing.Size(135, 72);
+            this.bttnOk.Size = new System.Drawing.Size(130, 53);
             this.bttnOk.TabIndex = 5;
-            this.bttnOk.Text = "Salva";
+            this.bttnOk.Text = "OK";
             this.bttnOk.UseVisualStyleBackColor = true;
             this.bttnOk.Click += new System.EventHandler(this.bttnOk_Click);
             // 
             // bttnCancel
             // 
-            this.bttnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnCancel.Location = new System.Drawing.Point(639, 366);
+            this.bttnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnCancel.Location = new System.Drawing.Point(658, 385);
             this.bttnCancel.Name = "bttnCancel";
-            this.bttnCancel.Size = new System.Drawing.Size(135, 72);
+            this.bttnCancel.Size = new System.Drawing.Size(130, 53);
             this.bttnCancel.TabIndex = 6;
             this.bttnCancel.Text = "Annulla";
             this.bttnCancel.UseVisualStyleBackColor = true;
