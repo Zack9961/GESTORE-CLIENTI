@@ -245,7 +245,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtName);
             this.Name = "NewClientPage";
-            this.Text = "New Client";
+            this.Text = "Nuovo cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

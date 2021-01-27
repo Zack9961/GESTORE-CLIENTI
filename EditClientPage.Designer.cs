@@ -245,7 +245,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtName);
             this.Name = "EditClientPage";
-            this.Text = "EditClientPage";
+            this.Text = "Modifica cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

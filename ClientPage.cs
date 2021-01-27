@@ -32,7 +32,7 @@ namespace CLIENTS_MANAGER
             this.dtpLastWeight.Value = c.LastDate(c.DateList);
             this.txtIdealWeight.Text = IdealWeightCalculator().ToString();
             this.txtWeightChanged.Text = WeightChangedCalculator().ToString();
-            this.txtWeightChangedWeekly.Text = WeightChangedWeeklyClaculator().ToString();
+            this.txtWeightChangedWeekly.Text = WeightChangedWeeklyCalculator().ToString();
         }
         //method that calculate the ideal weight of the client
         private float IdealWeightCalculator()
@@ -64,7 +64,7 @@ namespace CLIENTS_MANAGER
         }
 
         //This method calculate the weight variation on a weekly based average
-        private float WeightChangedWeeklyClaculator()
+        private float WeightChangedWeeklyCalculator()
         {
             DateTime lastDate = clientStats.LastDate(clientStats.DateList);
             DateTime firstDate = clientStats.DateList[0];

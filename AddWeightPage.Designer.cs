@@ -119,7 +119,7 @@
             this.Controls.Add(this.lblAddWeight);
             this.Controls.Add(this.txtWeight);
             this.Name = "AddWeightPage";
-            this.Text = "AddWeightPage";
+            this.Text = "Aggiungi Peso";
             this.ResumeLayout(false);
             this.PerformLayout();
 
